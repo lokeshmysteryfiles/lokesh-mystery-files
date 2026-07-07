@@ -11,17 +11,13 @@ export default function SearchBar() {
   const [search, setSearch] = useState("");
 
   const fuse = new Fuse(mysteries, {
-    keys: [
-      "title",
-      "category",
-      "overview",
-      "description",
-      "timeline",
-      "theories",
-      "facts",
-    ],
-    threshold: 0.35,
-  });
+  keys: [
+    "title",
+    "category",
+    "description",
+  ],
+  threshold: 0.35,
+});
 
   const results = search
     ? fuse.search(search).map((result) => result.item)
