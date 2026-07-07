@@ -20,6 +20,7 @@ const mysteries = [
     image: "/images/mysteries/mystery3.jpg",
     category: "Alien Mystery",
   },
+  
 ];
 
 export default function FeaturedMysteries() {

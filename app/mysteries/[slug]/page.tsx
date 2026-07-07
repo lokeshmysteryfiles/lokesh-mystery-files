@@ -57,21 +57,88 @@ export default async function MysteryPage({
 
       </div>
 
-      <section className="max-w-5xl mx-auto py-20 px-8">
+     <section className="max-w-5xl mx-auto py-20 px-8">
 
-        <h2 className="text-4xl font-bold mb-8">
+  <h2 className="text-5xl font-black mb-10">
+    Mystery Overview
+  </h2>
 
-          Mystery Overview
+  {/* Overview */}
 
-        </h2>
+  {"overview" in mystery && mystery.overview && (
 
-        <p className="text-gray-300 leading-9 text-xl">
+    <p className="text-gray-300 text-xl leading-9 mb-14">
 
-          {mystery.description}
+      {mystery.overview}
 
-        </p>
+    </p>
 
-      </section>
+  )}
+
+  {/* Sections */}
+
+  {"sections" in mystery && mystery.sections?.map((section, index) => (
+
+    <div key={index} className="mb-14">
+
+      <h2 className="text-3xl font-bold text-red-500 mb-6">
+
+        {section.title}
+
+      </h2>
+
+      <p className="text-gray-300 text-xl leading-9">
+
+        {section.content}
+
+      </p>
+
+    </div>
+
+  ))}
+
+  {/* Old Mysteries */}
+
+  {"description" in mystery && mystery.description && !("overview" in mystery) && (
+
+    <p className="text-gray-300 text-xl leading-9">
+
+      {mystery.description}
+
+    </p>
+
+  )}
+
+  {/* Reel */}
+
+  {"instagram" in mystery && mystery.instagram && (
+
+    <a
+      href={mystery.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        mt-10
+        inline-block
+        bg-gradient-to-r
+        from-pink-500
+        via-red-500
+        to-yellow-500
+        px-8
+        py-4
+        rounded-full
+        text-white
+        font-bold
+        hover:scale-105
+        transition
+      "
+    >
+       Watch Instagram Reel
+    </a>
+
+  )}
+
+</section>
 
     </main>
   );
