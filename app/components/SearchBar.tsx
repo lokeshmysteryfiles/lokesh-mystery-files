@@ -103,9 +103,9 @@ export default function SearchBar() {
                         {item.title}
                       </h3>
 
-                      <p className="text-gray-400 mt-1 line-clamp-2">
-                        {item.overview}
-                      </p>
+                     <p className="text-gray-400 mt-1 line-clamp-2">
+  {item.description.slice(0, 120)}...
+</p>
 
                       <span className="inline-block mt-3 px-3 py-1 rounded-full bg-red-600 text-white text-xs">
                         {item.category}
